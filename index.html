@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sprunkified Beatbox Lab</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" id="appRoot">
+      <header>
+        <h1>Sprunkified Beatbox Lab</h1>
+        <p>Heavily inspired loop-mixing gameplay with original visuals and synth audio.</p>
+      </header>
+
+      <section class="controls" aria-label="transport controls">
+        <button id="playToggle" class="btn primary">Play</button>
+        <button id="stop" class="btn">Stop</button>
+        <button id="randomize" class="btn">Random Mix</button>
+
+        <label class="chip" for="sceneSelect">
+          Scene
+          <select id="sceneSelect">
+            <option value="neon">Neon</option>
+            <option value="sunset">Sunset</option>
+            <option value="void">Void</option>
+          </select>
+        </label>
+
+        <label class="bpm-control" for="bpm">
+          BPM
+          <input id="bpm" type="range" min="72" max="140" value="100" />
+          <span id="bpmValue">100</span>
+        </label>
+      </section>
+
+      <p class="hint">Tip: drag a character onto a stage slot. Click slot to clear. Space = play/pause.</p>
+      <p class="combo" id="comboBanner" aria-live="polite">No combo active</p>
+
+      <section class="palette" id="palette" aria-label="sound avatars"></section>
+
+      <section class="stage-wrap">
+        <h2>Stage</h2>
+        <div class="stage" id="stage"></div>
+      </section>
+    </main>
+
+    <template id="avatarTemplate">
+      <article class="avatar" draggable="true">
+        <div class="avatar-face">
+          <span class="eye"></span>
+          <span class="eye"></span>
+          <span class="mouth"></span>
+        </div>
+        <h3></h3>
+        <small></small>
+      </article>
+    </template>
+
+    <script src="main.js"></script>
+  </body>
+</html>
